@@ -22,6 +22,8 @@ class CreateFamilyGenerationsTable extends Migration
 
             $table->timestamps();
             $table->softDeletes();
+
+            $table->unique(['family','sort']);
         });
     }
 

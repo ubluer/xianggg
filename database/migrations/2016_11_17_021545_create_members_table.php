@@ -19,25 +19,25 @@ class CreateMembersTable extends Migration
             $table->string('family');
             $table->string('last_name');
             $table->string('first_name');
-            $table->string('family_name');//派号
-            $table->integer('generation');//代
+            $table->string('family_name')->nullable();//派号
+            $table->integer('generation')->nullable();//代
             $table->integer('gender');
-            $table->dateTime('birthday');
-            $table->string('birth_year');//农历
-            $table->string('birth_month');
-            $table->string('birth_date');//农历
-            $table->string('birthplace');
-            $table->dateTime('death_date');//公历
-            $table->string('death_year');//农历
-            $table->string('death_month');//农历
-            $table->string('death_day');//农历
-            $table->string('death_place');
-            $table->integer('death_day');
-            $table->string('father');
-            $table->string('mother');
-            $table->string('couple');//配偶
-            $table->string('resume');
-            $table->string('note');//编者注
+            $table->dateTime('birthday')->nullable();
+            $table->string('birth_year')->nullable();//农历
+            $table->string('birth_month')->nullable();
+            $table->string('birth_date')->nullable();//农历
+            $table->string('birthplace')->nullable();
+            $table->dateTime('death_date')->nullable();//公历
+            $table->string('death_year')->nullable();//农历
+            $table->string('death_month')->nullable();//农历
+            $table->string('death_day')->nullable();//农历
+            $table->string('death_place')->nullable();
+            $table->integer('death_day')->nullable();
+            $table->string('father')->nullable();
+            $table->string('mother')->nullable();
+            $table->string('couple')->nullable();//配偶
+            $table->string('resume')->nullable();
+            $table->string('note')->nullable();//编者注
 
             $table->timestamps();
             $table->softDeletes();

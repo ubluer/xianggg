@@ -16,10 +16,12 @@ class CreateFamiliesTable extends Migration
         Schema::create('families', function (Blueprint $table) {
             $table->uuid('id');
             $table->string('name');
-            $table->string('resume');
+            $table->string('resume')->nullable();
 
             $table->timestamps();
             $table->softDeletes();
+
+            $table->unique('name');
         });
     }
 
