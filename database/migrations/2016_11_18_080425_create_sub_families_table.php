@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateFamilyGenerationsTable extends Migration
+class CreateSubFamiliesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,18 +13,15 @@ class CreateFamilyGenerationsTable extends Migration
      */
     public function up()
     {
-        Schema::create('family_generations', function (Blueprint $table) {
+        Schema::create('sub_families', function (Blueprint $table) {
             $table->increments('id');
-
             $table->string('family');
-            $table->integer('sub_family');
-            $table->integer('sort');
-            $table->string('name');
-
+            $table->string('sub');
+            $table->string('resume');
             $table->timestamps();
             $table->softDeletes();
 
-            $table->unique(['family','sort']);
+            $table->unique(['family','sub']);
         });
     }
 
@@ -35,6 +32,6 @@ class CreateFamilyGenerationsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('family_generations');
+        Schema::dropIfExists('sub_families');
     }
 }

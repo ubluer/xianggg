@@ -1,7 +1,8 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Family;
 
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
 class MemberController extends Controller
@@ -13,7 +14,7 @@ class MemberController extends Controller
      */
     public function index()
     {
-        //
+        echo "member.index";
     }
 
     /**

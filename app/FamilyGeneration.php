@@ -2,9 +2,9 @@
 
 namespace App;
 
-use Illuminate\Database\Eloquent\Model;
+use App\Extension\OpenModel;
 
-class FamilyGeneration extends Model
+class FamilyGeneration extends OpenModel
 {
     //
 }

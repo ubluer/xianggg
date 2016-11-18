@@ -79,15 +79,18 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Laravel
+                    细雨巷
                 </div>
 
                 <div class="links">
-                    <a href="https://laravel.com/docs">Documentation</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
+                    <a href="{{ route('member.index') }}">族谱</a>
+                    <a href="#">知识库</a>
+                    <a href="#">问道</a>
+                    <a href="#">工具</a>
+                    @if (Auth::check())
+                    <a href="#">图库</a>
+                    @endif
+
                 </div>
             </div>
         </div>

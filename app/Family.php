@@ -2,9 +2,10 @@
 
 namespace App;
 
-use Illuminate\Database\Eloquent\Model;
 
-class Family extends Model
+use App\Extension\OpenModel;
+
+class Family extends OpenModel
 {
-    //
+
 }

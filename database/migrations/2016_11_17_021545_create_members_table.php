@@ -1,8 +1,8 @@
 <?php
 
-use Illuminate\Support\Facades\Schema;
-use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
 
 class CreateMembersTable extends Migration
 {
@@ -14,13 +14,15 @@ class CreateMembersTable extends Migration
     public function up()
     {
         Schema::create('members', function (Blueprint $table) {
-            $table->uuid('uuid');//唯一id
+            $table->increments('id');
 
             $table->string('family');
+            $table->string('branch')->comment('分支');
             $table->string('last_name');
             $table->string('first_name');
-            $table->string('family_name')->nullable();//派号
-            $table->integer('generation')->nullable();//代
+            $table->string('family_name')->nullable()->comment('派号');
+            $table->string('generation_name')->nullable();
+            $table->integer('generation')->nullable()->comment('代');//代
             $table->integer('gender');
             $table->dateTime('birthday')->nullable();
             $table->string('birth_year')->nullable();//农历
@@ -32,9 +34,9 @@ class CreateMembersTable extends Migration
             $table->string('death_month')->nullable();//农历
             $table->string('death_day')->nullable();//农历
             $table->string('death_place')->nullable();
-            $table->integer('death_day')->nullable();
             $table->string('father')->nullable();
             $table->string('mother')->nullable();
+            $table->string('order')->nullable()->comment('在弟兄里的排行');
             $table->string('couple')->nullable();//配偶
             $table->string('resume')->nullable();
             $table->string('note')->nullable();//编者注

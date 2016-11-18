@@ -4,7 +4,7 @@ namespace App;
 
 use App\Extension\OpenModel;
 
-class Member extends OpenModel
+class SubFamily extends OpenModel
 {
     //
 }

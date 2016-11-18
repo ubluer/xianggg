@@ -14,7 +14,8 @@ class CreateFamiliesTable extends Migration
     public function up()
     {
         Schema::create('families', function (Blueprint $table) {
-            $table->uuid('id');
+
+            $table->increments('id');
             $table->string('name');
             $table->string('resume')->nullable();
 
