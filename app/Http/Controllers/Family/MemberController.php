@@ -14,7 +14,7 @@ class MemberController extends Controller
      */
     public function index()
     {
-        echo "member.index";
+        return view('family/table');
     }
 
     /**
