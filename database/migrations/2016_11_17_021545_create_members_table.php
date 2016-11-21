@@ -17,13 +17,13 @@ class CreateMembersTable extends Migration
             $table->increments('id');
 
             $table->string('family');
-            $table->string('branch')->comment('分支');
+            $table->string('branch')->nullable()->comment('分支');
             $table->string('last_name');
             $table->string('first_name');
             $table->string('family_name')->nullable()->comment('派号');
             $table->string('generation_name')->nullable();
             $table->integer('generation')->nullable()->comment('代');//代
-            $table->integer('gender');
+            $table->integer('gender')->nullable();
             $table->dateTime('birthday')->nullable();
             $table->string('birth_year')->nullable();//农历
             $table->string('birth_month')->nullable();

@@ -3,10 +3,12 @@
 namespace App\Http\Controllers\Family;
 
 use App\Http\Controllers\Controller;
+use App\Member;
 use Illuminate\Http\Request;
 
 class MemberController extends Controller
 {
+
     /**
      * Display a listing of the resource.
      *
@@ -14,7 +16,8 @@ class MemberController extends Controller
      */
     public function index()
     {
-        return view('family/table');
+        $members = Member::paginate(10);
+        return view('family/member', ['members' => $members]);
     }
 
     /**
