@@ -89,7 +89,6 @@
                     @if (Auth::check())
                     <a href="#">图库</a>
                     @endif
-
                 </div>
             </div>
         </div>
