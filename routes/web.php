@@ -19,8 +19,13 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index');
 
-Route::resource('member', 'Family\MemberController');
 
 Route::group(['middleware' => 'auth'], function () {
+
+});
+
+Route::group(['namespace' => 'Family','prefix' => 'family'], function () {
+    Route::get('/home', 'FamilyHomeController@home')->name('family.home');
+    Route::resource('member', 'MemberController');
 
 });
