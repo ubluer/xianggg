@@ -5,7 +5,7 @@
  * Date: 01/12/2016
  * Time: 11:43 PM
  */
-$dir = '/Users/xiang/Pictures/archive/temp';  //要获取的目录
+$dir = '/Users/xiang/Pictures/2016-12-14';  //要获取的目录
 echo "********** 获取目录下所有文件和文件夹 **********\n";
 //先判断指定的路径是不是一个文件夹
 if (is_dir($dir)) {

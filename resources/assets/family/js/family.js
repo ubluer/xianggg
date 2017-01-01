@@ -51,6 +51,8 @@ Vue.http.interceptors.push((request, next) => {
  * the page. Then, you may begin adding components to this application
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
-const app = new Vue({
-    el: '#family'
-});
+import Vue from 'vue'
+import ElementUI from 'element-ui'
+
+Vue.use(ElementUI);
+

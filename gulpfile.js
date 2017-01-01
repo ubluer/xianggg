@@ -20,5 +20,8 @@ require('laravel-elixir-vue-2');
 
 elixir((mix) => {
     mix.sass('./resources/assets/family/sass/family.scss','public/family/css')
-        .webpack('./resources/assets/family/js/family.js','public/family/js');
+        .webpack('./resources/assets/family/js/family.js','public/family/js')
+        .styles([
+            './node_modules/element-ui/lib/theme-default/index.css'
+        ], 'public/family/css/ele.css');
 });
