@@ -18,12 +18,12 @@ class CreateMembersTable extends Migration
 
             $table->string('family');
             $table->string('branch')->nullable()->comment('分支');
-            $table->string('last_name');
-            $table->string('first_name');
-            $table->string('family_name')->nullable()->comment('派号');
+            $table->string('last_name')->nullable();
+            $table->string('first_name')->nullable();
+            $table->string('family_name')->nullable()->comment('派字');
             $table->string('generation_name')->nullable();
             $table->integer('generation')->nullable()->comment('代');//代
-            $table->integer('gender')->nullable();
+            $table->integer('gender')->nullable()->comment('1：男，0：女');
             $table->dateTime('birthday')->nullable();
             $table->string('birth_year')->nullable();//农历
             $table->string('birth_month')->nullable();
@@ -34,8 +34,8 @@ class CreateMembersTable extends Migration
             $table->string('death_month')->nullable();//农历
             $table->string('death_day')->nullable();//农历
             $table->string('death_place')->nullable();
-            $table->string('father')->nullable();
-            $table->string('mother')->nullable();
+            $table->integer('father')->nullable();
+            $table->integer('mother')->nullable();
             $table->string('order')->nullable()->comment('在弟兄里的排行');
             $table->string('couple')->nullable();//配偶
             $table->string('resume')->nullable();
