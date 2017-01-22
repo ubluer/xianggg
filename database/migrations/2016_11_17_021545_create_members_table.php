@@ -20,6 +20,7 @@ class CreateMembersTable extends Migration
             $table->string('branch')->nullable()->comment('分支');
             $table->string('last_name')->nullable();
             $table->string('first_name')->nullable();
+            $table->string('name')->nullable();
             $table->string('family_name')->nullable()->comment('派字');
             $table->string('generation_name')->nullable();
             $table->integer('generation')->nullable()->comment('代');//代
