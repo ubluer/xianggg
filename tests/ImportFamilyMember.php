@@ -34,14 +34,13 @@ class ImportFamilyMember extends TestCase
                     //获取父亲名称
                     $father = $contents[2];
                     echo "父" . $father . "\r\n";
+                    $grandfather = $contents[1];
                     //个人名称
                     $self = $contents[3];
                     echo "本人" . $self . "\r\n";
-                    $resume = $contents[4];
                     //个人详情
-                    $details = preg_split("/  /", $contents[4]);
-                    print_r($details);
-
+                    $resume = $contents[4];
+                    $this->save_line($self, $father, $gen, $genName, $resume, $grandfather);
                 }
             }
         }
@@ -49,27 +48,30 @@ class ImportFamilyMember extends TestCase
         fclose($handler); //关闭文件
     }
 
-    private function saveLine($self, $fatherName, $gen, $genName, $resume, $grandfatherName)
+    private function save_line($self, $fatherName, $gen, $genName, $resume, $grandfatherName)
     {
         $member = new Member();
         $member->name = $self;
         $member->family = "余";
         $member->branch = "湖南临湘万库里";
         $member->last_name = "余";
-        $member->generation->$gen;
+        $member->generation = $gen;
         $member->generation_name = $genName;
         $member->gender = 1;
+        $member->resume = $resume;
         //查找父
-        $father = Member::where('name', $fatherName);
-        if (count($father) == 1) {
-            $member->father = $father->id;
-        } else if (count($father) > 1) {
+        $fathers = Member::where('name', $fatherName);
+        if ($fathers->count() == 1) {
+            $member->father_id = $fathers->first()->id;
+        } else if ($fathers->count() > 1) {
+            echo $self . "父重名";
             //多个重名时，通过祖父判断
-            foreach ($father as $one) {
+            foreach ($fathers as $one) {
 
             }
-        }else{
-
+        } else {
+            echo $self . "父找不到";
         }
+        $member->save();
     }
 }

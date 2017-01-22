@@ -35,8 +35,8 @@ class CreateMembersTable extends Migration
             $table->string('death_month')->nullable();//农历
             $table->string('death_day')->nullable();//农历
             $table->string('death_place')->nullable();
-            $table->integer('father')->nullable();
-            $table->integer('mother')->nullable();
+            $table->integer('father_id')->nullable();
+            $table->integer('mother_id')->nullable();
             $table->string('order')->nullable()->comment('在弟兄里的排行');
             $table->string('couple')->nullable();//配偶
             $table->string('resume')->nullable();
